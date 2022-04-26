@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -98,9 +98,9 @@ class _HomePageState extends State<HomePage> {
                     onDestinationSelected: (int index) {
                       setState(() {
                         _selectedIndex = index;
-                           if (index == 0) {
-                langProvider.isItemSelected(false);
-              }
+                        if (index == 0) {
+                          langProvider.isItemSelected(false);
+                        }
                       });
                     },
                     groupAlignment: 0.5,
@@ -113,6 +113,18 @@ class _HomePageState extends State<HomePage> {
                     selectedIndex: _selectedIndex,
                     leading: langInit(),
                     destinations: [
+                      NavigationRailDestination(
+                          icon: SizedBox(),
+                          label: RotatedBox(
+                            quarterTurns: 0,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.favorite_outline,
+                                color: Colors.red,
+                              ),
+                            ),
+                          )),
                       NavigationRailDestination(
                           icon: SizedBox(),
                           label: RotatedBox(
@@ -157,7 +169,22 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         const SizedBox(
-          height: 120,
+          height: 70,
+        ),
+        Transform.rotate(
+          angle: -math.pi / 2,
+          child: Text(
+            'Briliant',
+            style: TextStyle(
+                letterSpacing: 0.1,
+                fontStyle: FontStyle.italic,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+          ),
+        ),
+        const SizedBox(
+          height: 24,
         ),
         ToggleButtons(
           fillColor: Colors.transparent,
@@ -177,8 +204,6 @@ class _HomePageState extends State<HomePage> {
               _langs.forEach((e) {
                 e.isActive = false;
               });
-
-           
 
               switch (index) {
                 case 0:

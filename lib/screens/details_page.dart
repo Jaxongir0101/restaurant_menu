@@ -19,7 +19,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-      final langProvider = Provider.of<LangProvider>(context, listen: false);
+    final langProvider = Provider.of<LangProvider>(context, listen: false);
     return Container(
       height: double.infinity,
       decoration: const BoxDecoration(
@@ -36,9 +36,9 @@ class _DetailsPageState extends State<DetailsPage> {
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
               onPressed: () {
-             setState(() {
-               langProvider.isItemSelected(false);
-             });
+                setState(() {
+                  langProvider.isItemSelected(false);
+                });
               },
               icon: Icon(
                 Icons.arrow_back,
@@ -61,12 +61,12 @@ class _DetailsPageState extends State<DetailsPage> {
         clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          details( getMeals()[widget.selectedItemIndex]),
+          details(getMeals()[widget.selectedItemIndex]),
           Positioned(
               top: -72,
               right: -40,
               child: Image.asset(
-               getMeals()[widget.selectedItemIndex].imageUrl!,
+                getMeals()[widget.selectedItemIndex].imageUrl!,
                 height: 200,
               ))
         ],
@@ -91,8 +91,6 @@ class _DetailsPageState extends State<DetailsPage> {
       default:
         return Meal.mealUz;
     }
-
- 
   }
 
   Widget details(Meal meal) {

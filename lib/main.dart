@@ -4,6 +4,7 @@ import 'package:restaurant_menu/lang_provider.dart';
 import 'package:restaurant_menu/screens/home_page.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
